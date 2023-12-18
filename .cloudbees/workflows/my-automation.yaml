@@ -25,4 +25,3 @@ jobs:
           server-url: https://sonarqube.cb-demos.io/
           username: admin
           password: admin123
-          language: java
