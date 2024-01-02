@@ -35,6 +35,4 @@ jobs:
           echo "Hello World" 
           echo "pwd" 
         shell: bash
-    needs:
-      - build
-      - scan
+    needs: scan
