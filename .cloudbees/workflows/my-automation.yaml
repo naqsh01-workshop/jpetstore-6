@@ -28,3 +28,13 @@ jobs:
           username: admin
           password: admin123
           language: Java
+  TriggerCloudBeesCD:
+    steps:
+      - uses: docker://alpine:3.18
+        run: |-
+          echo "Hello World" 
+          echo "pwd" 
+        shell: bash
+    needs:
+      - build
+      - scan
