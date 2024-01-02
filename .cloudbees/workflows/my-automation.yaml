@@ -31,8 +31,7 @@ jobs:
   TriggerCloudBeesCD:
     steps:
       - uses: docker://alpine:3.18
+        shell: bash
         run: |-
           echo "Hello World" 
-          echo "pwd" 
-        shell: bash
     needs: scan
