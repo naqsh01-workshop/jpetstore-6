@@ -31,7 +31,7 @@ jobs:
   TriggerCloudBeesCD:
     steps:
       - uses: docker://alpine:3.18
-        shell: bash
+        shell: sh
         run: |
           echo 'Hello'
           echo 'world'
