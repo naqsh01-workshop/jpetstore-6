@@ -33,6 +33,5 @@ jobs:
       - uses: docker://alpine:3.18
         shell: sh
         run: |
-          echo 'Hello'
-          echo 'world'
+          curl -X POST "https://sda.preview.cb-demos.io/rest/v1.0/releases?projectName=snaqvi%20Demo&releaseName=AWS%20Release" -H "accept: application/json" -d "{}"
     needs: scan
