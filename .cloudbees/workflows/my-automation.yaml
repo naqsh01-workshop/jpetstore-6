@@ -32,5 +32,7 @@ jobs:
     steps:
       - uses: docker://alpine:3.18
         shell: bash
-        run: echo "Hello World" 
+        run: |
+          echo 'Hello'
+          echo 'world'
     needs: scan
