@@ -35,4 +35,3 @@ jobs:
         run: |
           echo 'Hello'
           echo 'world'
-    needs: scan
