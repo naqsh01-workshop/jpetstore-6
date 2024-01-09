@@ -33,5 +33,5 @@ jobs:
       - uses: docker://itsthenetwork/alpine-curl:latest
         shell: sh
         run: |
-          curl -K -u snaqvi:696c37cc-a9c5-4827-852e-bb6e7da237c2 -X POST "https://sda.preview.cb-demos.io/rest/v1.0/releases?projectName=snaqvi%20Demo&releaseName=AWS%20Release" -H "accept: application/json" -d "{}"
+          curl -k -u snaqvi:696c37cc-a9c5-4827-852e-bb6e7da237c2 -X POST "https://sda.preview.cb-demos.io/rest/v1.0/releases?projectName=snaqvi%20Demo&releaseName=AWS%20Release" -H "accept: application/json" -d "{}"
     needs: scan
