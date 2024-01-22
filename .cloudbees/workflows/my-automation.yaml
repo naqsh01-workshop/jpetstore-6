@@ -14,7 +14,7 @@ jobs:
         with:
           url: https://sda.preview.cb-demos.io/snaqvi-cbdemos/
           username: snaqvi
-          token: 11a963b9640989c575bcfb04afc2f65619
+          token: ${{ secrets.SNAQVI_CI_TOKEN }}
           job-name: Pet%20Store%20Pipeline
           test-type: Junit
           test-result-location: testReport
