@@ -26,7 +26,7 @@ jobs:
         with:
           server-url: https://sonarqube.cb-demos.io/dashboard?id=petclinic
           username: ${{ secrets.SNAQVI_SONARQUBE_USER }}
-          password: ${{ secrets.SNAQVI_SONARQUBE_PASSWORD }}
+          password: ${{ vars.SNAQVI_SONARQUBE_PASSWORD }}
           language: Java
   TriggerCloudBeesCD:
     steps:
