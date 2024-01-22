@@ -25,15 +25,15 @@ jobs:
         kind: scan
         with:
           server-url: https://sonarqube.cb-demos.io/dashboard?id=petclinic
-          username: admin
-          password: admin123
+          username: ${{ secrets.SNAQVI_SONARQUBE_USER }}
+          password: ${{ secrets.SNAQVI_SONARQUBE_PASSWORD }}
           language: Java
   TriggerCloudBeesCD:
     steps:
       - uses: docker://itsthenetwork/alpine-curl:latest
         shell: sh
         run: >
-          curl -k -u snaqvi:696c37cc-a9c5-4827-852e-bb6e7da237c2 -X POST
+          curl -k -u snaqvi:${{ secrets.SNAQVI_CD_TOKEN }} -X POST
           "https://sda.preview.cb-demos.io/rest/v1.0/releases?projectName=snaqvi%20Demo&releaseName=AWS%20Release"
           -H "accept: application/json" -d "{}"
     needs:
