@@ -28,6 +28,12 @@ jobs:
           username: ${{ vars.SNAQVI_SONARQUBE_USER }}
           password: ${{ secrets.SNAQVI_SONARQUBE_PASSWORD }}
           language: Java
+      - uses: cloudbees-io/sonarqube-bundled-sast-scan-code@v2
+        name: Scan 2
+        kind: scan
+        with:
+          sonar-exclusion: "**/*.java"
+          language: JAVA
   TriggerCloudBeesCD:
     steps:
       - uses: docker://itsthenetwork/alpine-curl:latest
