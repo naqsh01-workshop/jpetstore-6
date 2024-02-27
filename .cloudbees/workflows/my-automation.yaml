@@ -42,7 +42,7 @@ jobs:
       - name: Scan with GitHub Advanced Security
         uses: cloudbees-io/github-security-sast-scan-code@v1
         with:
-          token: ${{ secrets.GITHUB_SECRET }}
+          token: ${{ secrets.SNAQVI_GITHUB_SECRET }}
           language: "LANGUAGE_JAVA"
   TriggerCloudBeesCD:
     steps:
