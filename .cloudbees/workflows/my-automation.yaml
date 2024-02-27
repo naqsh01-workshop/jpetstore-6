@@ -33,7 +33,8 @@ jobs:
         kind: scan
         with:
           sonar-exclusion: "**/*.java"
-          language: JAVA
+          language: Java
+          cover-file-name: "**/petclinic/src/main"
   TriggerCloudBeesCD:
     steps:
       - uses: docker://itsthenetwork/alpine-curl:latest
