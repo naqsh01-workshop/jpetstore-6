@@ -31,6 +31,7 @@ jobs:
   TriggerCloudBeesCD:
     steps:
       - uses: docker://itsthenetwork/alpine-curl:latest
+        kind: deploy
         shell: sh
         run: >
           curl -k -u snaqvi:${{ secrets.SNAQVI_CD_TOKEN }} -X POST
@@ -38,4 +39,4 @@ jobs:
           -H "accept: application/json" -d "{}"
     needs:
       - scan
-      - build 
+      - build
