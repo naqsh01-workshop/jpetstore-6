@@ -38,4 +38,4 @@ jobs:
           -H "accept: application/json" -d "{}"
     needs:
       - scan
-      - build
+      - build 
