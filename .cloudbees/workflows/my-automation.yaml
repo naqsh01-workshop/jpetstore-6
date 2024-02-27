@@ -35,15 +35,17 @@ jobs:
           sonar-exclusion: "**/*.java"
           language: Java
           cover-file-name: "**/petclinic/src/main"
-      - name: Scan with Find Security Bugs
-        uses: cloudbees-io/findsecbugs-sast-scan-code@v1
+      - uses: cloudbees-io/findsecbugs-sast-scan-code@v1
+        name: Scan with Find Security Bugs
+        kind: scan
         with:
-          language: "LANGUAGE_JAVA"
-      - name: Scan with GitHub Advanced Security
-        uses: cloudbees-io/github-security-sast-scan-code@v1
+          language: LANGUAGE_JAVA
+      - uses: cloudbees-io/github-security-sast-scan-code@v1
+        name: Scan with GitHub Advanced Security
+        kind: scan
         with:
           token: ${{ secrets.SNAQVI_GITHUB_SECRET }}
-          language: "LANGUAGE_JAVA"
+          language: LANGUAGE_JAVA
   TriggerCloudBeesCD:
     steps:
       - uses: docker://itsthenetwork/alpine-curl:latest
