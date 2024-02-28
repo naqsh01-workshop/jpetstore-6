@@ -32,19 +32,11 @@ jobs:
         name: Scan 2
         kind: scan
         with:
-          sonar-exclusion: "**/*.java"
-          language: Java
-          cover-file-name: "**/petclinic/src/main"
+          language: JAVA
       - uses: cloudbees-io/findsecbugs-sast-scan-code@v1
         name: Scan with Find Security Bugs
         kind: scan
         with:
-          language: LANGUAGE_JAVA
-      - uses: cloudbees-io/github-security-sast-scan-code@v1
-        name: Scan with GitHub Advanced Security
-        kind: scan
-        with:
-          token: ${{ secrets.SNAQVI_GITHUB_SECRET }}
           language: LANGUAGE_JAVA
   TriggerCloudBeesCD:
     steps:
