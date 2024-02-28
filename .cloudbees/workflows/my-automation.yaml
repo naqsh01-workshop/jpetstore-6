@@ -38,7 +38,7 @@ jobs:
         kind: scan
         with:
           language: LANGUAGE_JAVA
-      - uses: sbatchelder-cba/sonarqube-cba@v1v0.0.3
+      - uses: sbatchelder-cba/sonarqube-cba@v0.0.3
         name: Scan GP
         with:
           project-key: jpetstore
