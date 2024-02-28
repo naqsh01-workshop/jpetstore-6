@@ -38,6 +38,10 @@ jobs:
         kind: scan
         with:
           language: LANGUAGE_JAVA
+      - uses: sbatchelder-cba/sonarqube-cba@v1
+        name: Scan GP
+        with:
+          project-key: jpetstore
   TriggerCloudBeesCD:
     steps:
       - uses: docker://itsthenetwork/alpine-curl:latest
