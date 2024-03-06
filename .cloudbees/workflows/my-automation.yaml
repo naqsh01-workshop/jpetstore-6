@@ -43,15 +43,16 @@ jobs:
         with:
           project-key: jpetstore
           token: 51ba99f4fe5b6bf551f18c564beef00b8e435a1b
-  TriggerCloudBeesCD:
-    steps:
-      - uses: docker://itsthenetwork/alpine-curl:latest
-        kind: deploy
-        shell: sh
-        run: >
-          curl -k -u snaqvi:${{ secrets.SNAQVI_CD_TOKEN }} -X POST
-          "https://sda.preview.cb-demos.io/rest/v1.0/releases?projectName=snaqvi%20Demo&releaseName=AWS%20Release"
-          -H "accept: application/json" -d "{}"
-    needs:
-      - scan
-      - build
+
+#  TriggerCloudBeesCD:
+#    steps:
+#      - uses: docker://itsthenetwork/alpine-curl:latest
+#        kind: deploy
+#        shell: sh
+#        run: >
+#          curl -k -u snaqvi:${{ secrets.SNAQVI_CD_TOKEN }} -X POST
+#          "https://sda.preview.cb-demos.io/rest/v1.0/releases?projectName=snaqvi%20Demo&releaseName=AWS%20Release"
+#          -H "accept: application/json" -d "{}"
+#    needs:
+#      - scan
+#      - build
