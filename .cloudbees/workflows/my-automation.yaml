@@ -53,7 +53,7 @@ jobs:
           curl -k -u snaqvi:${{ secrets.SNAQVI_CD_TOKEN }} -X POST
           "https://sda.preview.cb-demos.io/rest/v1.0/releases?projectName=snaqvi%20Demo&releaseName=AWS%20Release"
           -H "accept: application/json" -d "{}"
-          exit -1;
+          return 1
 
     needs:
       - scan
